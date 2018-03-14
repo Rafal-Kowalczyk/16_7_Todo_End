@@ -1,0 +1,30 @@
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 0;
+}
+li {
+    padding: 10px;
+    background-color: #00def7;
+    border: 1px solid #ecf0f1;
+    border-radius: 6px;
+    color: #34495e;
+    margin-top: 10px;
+    margin-left: 10px;
+    min-width: 300px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+button {
+    display: inline-block;
+    float: right;
+    background-color: #ef0909;
+    color: #000;
+    margin-left: 5px;
+    cursor: pointer;
+    border: none;
+}
