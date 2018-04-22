@@ -25,20 +25,26 @@ class App extends React.Component {
             ]
         };
     }
-    addTodo(val){
+   
+    addTodo(val, e) {
+        e.preventDefault ();
+        e.stopPropagation ();
         const todo = {
             text: val,
             id: uuid.v4(),
         };
         const data = [...this.state.data, todo];
         this.setState({data});
+    //    this.setState({
+    //        input:""
+    //   });
     }
     removeTodo(id) {
         const remainder = this.state.data.filter(todo => todo.id !== id);
         this.setState({data: remainder});
     }
     onChangeHandler(event) {
-        let task = event.target.value;
+        const task = event.target.value;
         this.setState({input: task});
         event.preventDefault();
     }
@@ -54,7 +60,7 @@ class App extends React.Component {
                 <TodoList 
                     items={this.state.data} 
                     remove={this.removeTodo.bind(this)}
-                />  
+                />                  
             </div>
         );
     }
